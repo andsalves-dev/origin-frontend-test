@@ -15,14 +15,17 @@ export default function MonthAmountInfo(props: GoalData): ReactElement {
     <div className={styles.monthlyAmountInfo}>
       <div>
         <label>Monthly amount</label>
-        <div className={styles.monthlyAmount}>
+        <div className={styles.monthlyAmount} data-qa="monthlyAmount">
           ${formatMoney(totalAmount / monthDiff)}
         </div>
       </div>
       <p>
-        You’re planning <strong>{monthDiff} monthly deposits</strong> to reach
-        your <strong>${formatMoney(totalAmount)}</strong> goal by{' '}
-        <strong>
+        You’re planning{' '}
+        <strong data-qa="depositCount">{monthDiff} monthly deposits</strong> to
+        reach your{' '}
+        <strong data-qa="totalAmount">${formatMoney(totalAmount)}</strong> goal
+        by{' '}
+        <strong data-qa="monthAndYear">
           {monthNames[byDate.getMonth()]} {byDate.getFullYear()}.
         </strong>
       </p>
