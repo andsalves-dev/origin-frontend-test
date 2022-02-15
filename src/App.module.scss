@@ -1,0 +1,18 @@
+.description {
+  color: #1B31A8;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 3rem;
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 32.5rem) {
+  .description {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+  }
+}

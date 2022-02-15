@@ -1,0 +1,251 @@
+.container {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 16px 32px rgba(30, 42, 50, 0.08);
+  box-sizing: border-box;
+  display: grid;
+  margin: 0 auto 6rem;
+  max-width: 35rem;
+  padding: 2.1875rem 2.5rem 2.5rem;
+}
+
+.header {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 5rem auto;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.icon {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.heading {
+  margin: 0;
+  grid-column: 2 / 2;
+  grid-row: 1;
+  font-weight: 600;
+  color: #1E2A32;
+}
+
+.subtitle {
+  grid-column: 2 / 2;
+  grid-row: 2;
+  color: #708797;
+  margin-top: 0.35rem;
+}
+
+.inputGroup {
+  display: flex;
+  margin-top: 1.75rem;
+
+  label {
+    color: #1E2A32;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    font-size: 0.875rem;
+
+    & + label {
+      flex: 1;
+      margin-left: 1rem;
+      width: auto;
+    }
+
+    .amountInput, .goalByInput {
+      margin-top: 0.45rem;
+      border-radius: 0.25rem;
+      border: 1px solid #E9EEF2;
+      height: 3.5rem;
+    }
+
+    .amountInput {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+
+      .dollarIcon {
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+      }
+
+      input {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        color: #4D6475;
+        flex: 1;
+        font-size: 1.5rem;
+        font-weight: 500;
+        width: 100%;
+
+        &[name="amount"] {
+          font-family: Rubik, serif;
+        }
+
+        &:focus, &:active, &:focus-visible {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    .goalByInput {
+      display: grid;
+      grid-template-columns: 2.5rem auto 2.5rem;
+      grid-template-rows: 1fr 1fr;
+
+      select[name="month"], select[name="year"] {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+        color: #1E2A32;
+        font-weight: 600;
+        font-size: 1rem;
+
+        &:focus, &:active, &:focus-visible {
+          border: none;
+          outline: none;
+        }
+      }
+
+      select[name="year"] {
+        grid-row: 2;
+        color: #708797;
+        font-weight: 100;
+      }
+
+      .leftIcon, .rightIcon {
+        align-self: center;
+        cursor: pointer;
+        grid-column: 1;
+        grid-row: 1 / 3;
+        justify-self: center;
+      }
+
+      .rightIcon {
+        grid-column: 3;
+      }
+
+      .disabledArrow {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.monthlyAmountInfo {
+  border-radius: 0.5rem;
+  border: 1px solid #E9EEF2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+
+  & > div {
+    align-items: center;
+    color: #1E2A32;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 400;
+    height: 4.875rem;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  & > p {
+    background: #F4F8FA;
+    font-size: 0.75rem;
+    grid-column: 1 / 3;
+    margin: 0;
+    padding: 1.5rem 2rem;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .monthlyAmount {
+    color: #0079FF;
+    font-family: Rubik, serif;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.confirmButton {
+  background: #1B31A8;
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 3.5rem;
+  margin: 2rem auto 0;
+  max-width: 20rem;
+  padding: 0;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 32.5rem) {
+  .heading {
+    font-size: 1.25rem;
+    align-self: center;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  .container {
+    padding: 2rem 1.5rem 1.5rem;
+
+    .inputGroup {
+      flex-direction: column;
+
+      label {
+        font-size: 0.75rem;
+        width: auto;
+
+        select[name="month"], select[name="year"] {
+          font-size: 0.875rem;
+        }
+
+        select[name="month"] {
+          margin-top: 0.25rem;
+        }
+
+        select[name="year"] {
+          align-self: start;
+        }
+
+        & + label {
+          margin-left: 0;
+          margin-top: 1rem;
+        }
+      }
+
+      .amountInput input {
+        font-size: 1.25rem;
+      }
+    }
+
+    .monthlyAmountInfo {
+      & > div {
+        font-size: 1.125rem;
+        padding: 0 1.5rem;
+      }
+
+      .monthlyAmount {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

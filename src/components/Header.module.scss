@@ -1,0 +1,28 @@
+.header {
+  align-items: center;
+  background: white;
+  display: flex;
+  height: 5rem;
+  padding-left: 3.5rem;
+}
+
+@media only screen and (max-width: 45rem) {
+  .header {
+    padding-left: 2rem;
+
+    img {
+      transform: scale(0.85);
+    }
+  }
+}
+
+@media screen and (max-width: 32.5rem) {
+  .header {
+    padding-left: 0.5rem;
+    height: 3.5rem;
+
+    img {
+      transform: scale(0.75);
+    }
+  }
+}
